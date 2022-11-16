@@ -1,0 +1,419 @@
+<html>
+    <head>
+        <meta content="TO KHAC GIAP" name="title"/>
+        <meta content="" name="description"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TO KHAC GIAP</title>
+        <link rel="stylesheet" href="/style.css"/>
+    </head>
+
+    <body>
+
+<style>
+    .mobMn{position:fixed;left:0;right:0;bottom:0; border-top:1px solid var(--mobL);border-radius:var(--mobBr) var(--mobBr) 0 0;background:white;color:var(--mobT);padding:0 20px;box-shadow:0 -10px 25px -5px rgba(0,0,0,.1);z-index:2;font-size:12px}
+    .mobMn svg.line{
+        fill: none !important;
+        stroke:black;
+        padding-top:20px;
+    }
+    .mobMn ul{height:55px;display:flex;align-items:center;justify-content:space-around;list-style:none;margin:0;padding-inline-start:0;}
+    .mobMn li{display:flex;justify-content:center;}
+    .mobMn li >*{display:inline-flex;align-items:flex-end;justify-content:center;min-width:35px;height:35px;border-radius:20px;padding:0 8px;transition:var(--trans-1);color:inherit}
+    .mobMn li svg{margin:0 3px;flex-shrink:0}
+    .mobMn li >*::after{content:attr(data-text);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:0;margin:0;transition:inherit;opacity:.7}
+    .mobMn .nmH{opacity:.7}
+
+   
+   
+    .MN-2 .mobMn{font-size:10px}
+    .mobS .mobMn li >*{flex-direction:column;position:relative}
+    .mobS .mobMn li >*:hover{background:transparent}
+    .MN-2 .mobMn li >*::after{max-width:none} /* Style 3 */
+    .MN-3 .mobMn li >*::after, .MN-4 .mobMn li >*::after{content:'';width:4px;height:4px;border-radius:50%;position:absolute;bottom:-2px;opacity:0}
+   
+    
+    .MN-4 .mobMn{left:15px;right:15px;bottom:15px;padding:0 10px;border-radius:var(--headerR);box-shadow: 0 5px 35px rgba(0,0,0,.1);transition:bottom 1.2s ease;-webkit-transition:bottom 1.2s ease}
+    .MN-4 .mobMn.slide{bottom:-150px;transition:bottom 1.5s ease;-webkit-transition:bottom 1.5s ease}
+
+    .tab-mobile.active {
+        border-bottom: 1px solid rgb(0, 0, 0, 0.7);
+        padding-bottom:5px;
+    }
+</style>
+
+        <div class="mobMn section slide" id="mobile-menu" hidden><div class="widget TextList" data-version="2" id="TextList99">
+            <ul>
+            <li class="mH nmH tab-mobile active">
+            <span aria-label="Home" data-text="Home" role="button">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(5.000000, 2.400000)'><path d='M6.84454545,19.261909 C3.15272727,19.261909 -8.52651283e-14,18.6874153 -8.52651283e-14,16.3866334 C-8.52651283e-14,14.0858516 3.13272727,11.961909 6.84454545,11.961909 C10.5363636,11.961909 13.6890909,14.0652671 13.6890909,16.366049 C13.6890909,18.6658952 10.5563636,19.261909 6.84454545,19.261909 Z'></path><path d='M6.83729838,8.77363636 C9.26002565,8.77363636 11.223662,6.81 11.223662,4.38727273 C11.223662,1.96454545 9.26002565,-1.0658141e-14 6.83729838,-1.0658141e-14 C4.41457111,-1.0658141e-14 2.45,1.96454545 2.45,4.38727273 C2.44184383,6.80181818 4.39184383,8.76545455 6.80638929,8.77363636 C6.81729838,8.77363636 6.82729838,8.77363636 6.83729838,8.77363636 Z'></path></g>
+                </svg>
+            </span>
+            </li>
+            <li class="mS tab-mobile">
+            <label aria-label="Search" data-text="Search" for="searchIn">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(3.610000, 2.750100)'><line x1='11.9858' y1='12.9463' x2='4.7658' y2='12.9463'></line><line x1='11.9858' y1='9.1865' x2='4.7658' y2='9.1865'></line><line x1='7.521' y1='5.4272' x2='4.766' y2='5.4272'></line><path d='M7.63833441e-14,9.25 C7.63833441e-14,16.187 2.098,18.5 8.391,18.5 C14.685,18.5 16.782,16.187 16.782,9.25 C16.782,2.313 14.685,0 8.391,0 C2.098,0 7.63833441e-14,2.313 7.63833441e-14,9.25 Z'></path></g>
+                </svg>
+            </label>
+            </li>
+            <li class="mN tab-mobile">
+            <label aria-label="Menu" data-text="Menu" for="offNav">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.750200, 2.450300)'><line x1='9.2109' y1='14.0665' x2='9.2109' y2='11.4385'></line><path d='M18.3393,9.0274 L18.3103,9.0484 C15.8883,10.5404 12.6903,11.4414 9.2063,11.4414 C5.7223,11.4414 2.5333,10.5404 0.1123,9.0484 L0.0823,9.0274'></path><path d='M-2.14939178e-13,10.9004 C-2.14939178e-13,4.7484 2.303,2.6974 9.211,2.6974 C16.12,2.6974 18.422,4.7484 18.422,10.9004 C18.422,17.0524 16.12,19.1034 9.211,19.1034 C2.303,19.1034 -2.14939178e-13,17.0524 -2.14939178e-13,10.9004 Z'></path><path d='M12.4736,2.919 L12.4736,2.289 C12.4736,1.025 11.5506,-8.8817842e-15 10.4136,-8.8817842e-15 L8.0086,-8.8817842e-15 C6.8716,-8.8817842e-15 5.9486,1.025 5.9486,2.289 L5.9486,2.919'></path></g>
+                </svg>
+            </label>
+            </li>
+            <li class="mD tab-mobile">
+            <span aria-label="Mode" class="tDL" data-light="Light" data-text="Dark" onclick="darkMode()" role="button">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M10.0002,0.7501 C3.0632,0.7501 0.7502,3.0631 0.7502,10.0001 C0.7502,16.9371 3.0632,19.2501 10.0002,19.2501 C16.9372,19.2501 19.2502,16.9371 19.2502,10.0001'></path><path d='M17.5285,2.3038 L17.5285,2.3038 C16.5355,1.4248 15.0185,1.5168 14.1395,2.5098 C14.1395,2.5098 9.7705,7.4448 8.2555,9.1578 C6.7385,10.8698 7.8505,13.2348 7.8505,13.2348 C7.8505,13.2348 10.3545,14.0278 11.8485,12.3398 C13.3435,10.6518 17.7345,5.6928 17.7345,5.6928 C18.6135,4.6998 18.5205,3.1828 17.5285,2.3038 Z'></path><line x1='13.009' y1='3.8008' x2='16.604' y2='6.9838'></line></g>
+                </svg>
+            </span>
+            </li>
+            <li class="mS tab-mobile">
+            <span aria-label="Top" data-text="Top" role="button">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.452080, 2.851980)'><path d='M15.0928322,6.167017 C15.0928322,6.167017 11.8828071,10.0196486 9.53493746,10.0196486 C7.18807029,10.0196486 3.941955,6.167017 3.941955,6.167017'></path><path d='M1.04805054e-13,9.11679198 C1.04805054e-13,2.27869674 2.38095238,8.8817842e-15 9.52380952,8.8817842e-15 C16.6666667,8.8817842e-15 19.047619,2.27869674 19.047619,9.11679198 C19.047619,15.9538847 16.6666667,18.233584 9.52380952,18.233584 C2.38095238,18.233584 1.04805054e-13,15.9538847 1.04805054e-13,9.11679198 Z'></path></g>
+                </svg>
+            </span>
+            </li>
+            </ul>
+            </div></div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="cover">
+
+        </div>
+
+
+        <!--[ Code Header ]-->
+
+        <div class="header-box">
+            <div class="header-box-left">
+                <img src="AVT.jpg"/>
+                <div class="text-header-left">
+                   <h4>TO KHAC GIAP</h4>
+                   <div class="specialize">Developer | Designer</div>
+                   <div class="svg-header-left">
+                    <a href="https://www.facebook.com/tgiap.dev" title="Facebook" target="a">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                     viewBox="0 0 48.605 48.605" style="enable-background:new 0 0 48.605 48.605;" xml:space="preserve">
+                         <g>
+	                     <path d="M34.094,8.688h4.756V0.005h-8.643c-0.721-0.03-9.51-0.198-11.788,8.489c-0.033,0.091-0.761,2.157-0.761,6.983l-7.903,0.024
+		                 v9.107l7.913-0.023v24.021h12.087v-24h8v-9.131h-8v-2.873C29.755,10.816,30.508,8.688,34.094,8.688z M35.755,17.474v5.131h-8v24
+		                 h-8.087V22.579l-7.913,0.023v-5.107l7.934-0.023l-0.021-1.017c-0.104-5.112,0.625-7.262,0.658-7.365
+		                 c1.966-7.482,9.473-7.106,9.795-7.086l6.729,0.002v4.683h-2.756c-4.673,0-6.338,3.054-6.338,5.912v4.873L35.755,17.474
+		                 L35.755,17.474z"/>
+                         </g>
+                    </svg>
+                    </a>
+
+                    <a href="#" target="a" title="Twitter">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                             <g>
+                                <path d="M507.413,93.394c-3.709-2.51-8.607-2.383-12.174,0.327c-3.612,2.735-9.474,5.087-16.138,7.016
+			                    c18.245-21.301,18.623-35.541,18.408-38.893c-0.245-3.801-2.541-7.168-5.985-8.791c-3.459-1.612-7.51-1.23-10.587,1.005
+		                        c-21.893,15.908-43.689,19.373-56.791,19.76c-20.337-19.342-46.704-29.944-74.74-29.944c-60.271,0-109.307,49.684-109.307,110.751
+			                    c0,4.944,0.327,9.878,0.969,14.771C138.176,167.645,54.665,69.155,53.803,68.119c-2.184-2.617-5.5-4.041-8.929-3.714
+			                    c-3.398,0.296-6.444,2.235-8.148,5.189c-29.005,50.322-11.286,94.725,6.505,121.327c-1.837-1.092-3.342-2.097-4.372-2.857
+			                    c-3.143-2.337-7.337-2.725-10.852-0.995c-3.521,1.735-5.771,5.286-5.837,9.209c-0.786,48.255,21.764,76.49,43.674,92.49
+			                    c-2.372,0.327-4.597,1.459-6.266,3.276c-2.51,2.724-3.393,6.576-2.311,10.122c15.194,49.735,52.041,67.352,76.373,73.587
+			                    c-49.22,37.138-120.557,25.016-121.348,24.867c-4.73-0.831-9.464,1.663-11.408,6.082c-1.939,4.413-0.612,9.587,3.225,12.51
+			                    c52.464,40.041,115.21,48.913,160.53,48.913c34.272,0,58.573-5.077,60.91-5.582c228.617-54.179,235.864-263.063,235.394-298.66
+			                    c42.888-39.929,49.633-55.255,50.684-59.067C512.811,100.502,511.117,95.91,507.413,93.394z M443.283,151.752
+			                    c-2.33,2.143-3.56,5.235-3.346,8.398c0.036,0.561,3.536,57.179-21.694,120.266c-33.709,84.291-100.164,138.725-197.307,161.746
+			                    c-1.041,0.219-90.905,18.831-169.792-18.689c33.725-1.414,80.429-10.913,113.292-47.806c2.745-3.077,3.398-7.833,1.709-11.593
+			                    c-1.689-3.75-5.439-6.51-9.551-6.51c-0.02,0-0.041,0-0.071,0c-2.76,0-50.337-0.357-73.133-46.306
+			                    c9.219,0.398,20.24-0.145,29.122-4.237c4.092-1.888,6.51-6.1,6.005-10.574c-0.505-4.475-3.821-8.079-8.23-9.008
+			                    c-2.556-0.541-57.649-12.836-66.143-72.693c8.464,3.526,19.015,6.257,29.51,4.685c4.031-0.602,7.332-3.5,8.474-7.413
+			                    c1.138-3.908-0.107-8.13-3.184-10.809c-2.383-2.07-54.327-48.273-30.541-107.973c28.158,29.332,108.46,102.368,205.833,96.786
+			                    c3.107-0.179,5.975-1.74,7.82-4.25c1.843-2.51,2.471-5.709,1.71-8.728c-1.837-7.316-2.77-14.857-2.77-22.418
+			                    c0-49.546,39.658-89.853,88.409-89.853c23.842,0,46.203,9.515,62.97,26.796c1.923,1.985,4.556,3.122,7.322,3.174
+			                    c9.658,0.092,25.561-0.949,43.531-7.633c-5.359,6.275-12.852,13.622-23.332,21.852c-3.622,2.847-4.954,7.735-3.276,12.026
+			                    c1.684,4.301,6.056,7.02,10.566,6.607c2.112-0.168,12.352-1.071,24.352-3.505C464.662,131.4,455.494,140.523,443.283,151.752z"/>
+                             </g>
+                        </svg>
+                    </a>
+
+                    <a href="#" target="a" title="instagram">
+                        <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <style type="text/css">
+	                                .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	                                .st1{fill:none;stroke:#000000;stroke-width:2;}
+	                                .st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+                                </style>
+                                <path class="st0" d="M23,31H9c-4.4,0-8-3.6-8-8V9c0-4.4,3.6-8,8-8h14c4.4,0,8,3.6,8,8v14C31,27.4,27.4,31,23,31z"/>
+                                    <circle class="st0" cx="16" cy="16" r="7"/>
+                                    <circle class="st0" cx="24" cy="7" r="1"/>
+                        </svg>
+                    </a>
+                   </div>
+                </div>
+
+
+            </div>
+
+            <div class="header-box-right">
+                <div class="left-right-header">
+                <div class="email-header">
+                    <h5>EMAIL</h5>
+                    <div>togiap.dev@gmail.com</div>
+                </div>
+
+                <div class="birthday-header">
+                    <h5>BIRTHDAY</h5>
+                    <div>28 November, 2004</div>
+                </div>
+                </div>
+
+                <div class="right-right-header">
+                <div class="phone-header">
+                    <h5>PHONE</h5>
+                    <div>(+84) 0977 836 517</div>
+                </div>
+
+                <div class="location-header">
+                    <h5>LOCATION</h5>
+                    <div>Ha Noi, Viet Nam</div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--[ End Code Header ]-->
+
+        <!--[ Header tablet ]-->
+
+        <div class="header-tablet" hidden>
+            <div class="img-tablet">
+                <img src="avt.jpg"/>
+            </div>
+            <div class="name-tablet">TO KHAC GIAP</div>
+            <div class="specialize-tablet">Developer | Designer</div>
+            <div class="social-tablet">
+                <a href="https://www.facebook.com" target="a" title="facebook">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                     viewBox="0 0 48.605 48.605" style="enable-background:new 0 0 48.605 48.605;" xml:space="preserve">
+                         <g>
+	                     <path d="M34.094,8.688h4.756V0.005h-8.643c-0.721-0.03-9.51-0.198-11.788,8.489c-0.033,0.091-0.761,2.157-0.761,6.983l-7.903,0.024
+		                 v9.107l7.913-0.023v24.021h12.087v-24h8v-9.131h-8v-2.873C29.755,10.816,30.508,8.688,34.094,8.688z M35.755,17.474v5.131h-8v24
+		                 h-8.087V22.579l-7.913,0.023v-5.107l7.934-0.023l-0.021-1.017c-0.104-5.112,0.625-7.262,0.658-7.365
+		                 c1.966-7.482,9.473-7.106,9.795-7.086l6.729,0.002v4.683h-2.756c-4.673,0-6.338,3.054-6.338,5.912v4.873L35.755,17.474
+		                 L35.755,17.474z"/>
+                         </g>
+                    </svg>
+                </a>
+
+                <a href="#" target="a" title="twitter">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                             <g>
+                                <path d="M507.413,93.394c-3.709-2.51-8.607-2.383-12.174,0.327c-3.612,2.735-9.474,5.087-16.138,7.016
+			                    c18.245-21.301,18.623-35.541,18.408-38.893c-0.245-3.801-2.541-7.168-5.985-8.791c-3.459-1.612-7.51-1.23-10.587,1.005
+		                        c-21.893,15.908-43.689,19.373-56.791,19.76c-20.337-19.342-46.704-29.944-74.74-29.944c-60.271,0-109.307,49.684-109.307,110.751
+			                    c0,4.944,0.327,9.878,0.969,14.771C138.176,167.645,54.665,69.155,53.803,68.119c-2.184-2.617-5.5-4.041-8.929-3.714
+			                    c-3.398,0.296-6.444,2.235-8.148,5.189c-29.005,50.322-11.286,94.725,6.505,121.327c-1.837-1.092-3.342-2.097-4.372-2.857
+			                    c-3.143-2.337-7.337-2.725-10.852-0.995c-3.521,1.735-5.771,5.286-5.837,9.209c-0.786,48.255,21.764,76.49,43.674,92.49
+			                    c-2.372,0.327-4.597,1.459-6.266,3.276c-2.51,2.724-3.393,6.576-2.311,10.122c15.194,49.735,52.041,67.352,76.373,73.587
+			                    c-49.22,37.138-120.557,25.016-121.348,24.867c-4.73-0.831-9.464,1.663-11.408,6.082c-1.939,4.413-0.612,9.587,3.225,12.51
+			                    c52.464,40.041,115.21,48.913,160.53,48.913c34.272,0,58.573-5.077,60.91-5.582c228.617-54.179,235.864-263.063,235.394-298.66
+			                    c42.888-39.929,49.633-55.255,50.684-59.067C512.811,100.502,511.117,95.91,507.413,93.394z M443.283,151.752
+			                    c-2.33,2.143-3.56,5.235-3.346,8.398c0.036,0.561,3.536,57.179-21.694,120.266c-33.709,84.291-100.164,138.725-197.307,161.746
+			                    c-1.041,0.219-90.905,18.831-169.792-18.689c33.725-1.414,80.429-10.913,113.292-47.806c2.745-3.077,3.398-7.833,1.709-11.593
+			                    c-1.689-3.75-5.439-6.51-9.551-6.51c-0.02,0-0.041,0-0.071,0c-2.76,0-50.337-0.357-73.133-46.306
+			                    c9.219,0.398,20.24-0.145,29.122-4.237c4.092-1.888,6.51-6.1,6.005-10.574c-0.505-4.475-3.821-8.079-8.23-9.008
+			                    c-2.556-0.541-57.649-12.836-66.143-72.693c8.464,3.526,19.015,6.257,29.51,4.685c4.031-0.602,7.332-3.5,8.474-7.413
+			                    c1.138-3.908-0.107-8.13-3.184-10.809c-2.383-2.07-54.327-48.273-30.541-107.973c28.158,29.332,108.46,102.368,205.833,96.786
+			                    c3.107-0.179,5.975-1.74,7.82-4.25c1.843-2.51,2.471-5.709,1.71-8.728c-1.837-7.316-2.77-14.857-2.77-22.418
+			                    c0-49.546,39.658-89.853,88.409-89.853c23.842,0,46.203,9.515,62.97,26.796c1.923,1.985,4.556,3.122,7.322,3.174
+			                    c9.658,0.092,25.561-0.949,43.531-7.633c-5.359,6.275-12.852,13.622-23.332,21.852c-3.622,2.847-4.954,7.735-3.276,12.026
+			                    c1.684,4.301,6.056,7.02,10.566,6.607c2.112-0.168,12.352-1.071,24.352-3.505C464.662,131.4,455.494,140.523,443.283,151.752z"/>
+                             </g>
+                        </svg>
+                </a>
+
+                <a href="#" target='a' title="instagram">
+                    <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <style type="text/css">
+	                                .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	                                .st1{fill:none;stroke:#000000;stroke-width:2;}
+	                                .st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+                                </style>
+                                <path class="st0" d="M23,31H9c-4.4,0-8-3.6-8-8V9c0-4.4,3.6-8,8-8h14c4.4,0,8,3.6,8,8v14C31,27.4,27.4,31,23,31z"/>
+                                    <circle class="st0" cx="16" cy="16" r="7"/>
+                                    <circle class="st0" cx="24" cy="7" r="1"/>
+                        </svg>
+                </a>
+            </div>
+
+            <div class="info-tablet">
+                <div class="left-info">
+                    <div class="email-tablet">
+                        <h5>EMAIL</h5>
+                        <div class="margin-all">togiap.dev@gmail.com</div>
+                    </div>
+
+                    <div class="birthday-tablet">
+                        <h5>BIRTHDAY</h5>
+                        <div class="margin-all">28 November, 2004</div>
+                    </div>
+
+                </div>
+                <div class="right-info">
+                    <div class="phone-tablet">
+                        <h5>PHONE</h5>
+                        <div class="margin-all">(+84) 0977 836 517</div>
+                    </div>
+
+                    <div class="location-tablet">
+                        <h5>LOCATION</h5>
+                        <div class="margin-all">Ha Noi, Viet Nam</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--[ End Header Tablet]-->
+
+
+    <!--[ Code Box Content ]-->
+
+    <div class="box-content">
+        <div class="option-content">
+            <div class="tab-item active about">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(5.000000, 2.400000)'><path d='M6.84454545,19.261909 C3.15272727,19.261909 -8.52651283e-14,18.6874153 -8.52651283e-14,16.3866334 C-8.52651283e-14,14.0858516 3.13272727,11.961909 6.84454545,11.961909 C10.5363636,11.961909 13.6890909,14.0652671 13.6890909,16.366049 C13.6890909,18.6658952 10.5563636,19.261909 6.84454545,19.261909 Z'></path><path d='M6.83729838,8.77363636 C9.26002565,8.77363636 11.223662,6.81 11.223662,4.38727273 C11.223662,1.96454545 9.26002565,-1.0658141e-14 6.83729838,-1.0658141e-14 C4.41457111,-1.0658141e-14 2.45,1.96454545 2.45,4.38727273 C2.44184383,6.80181818 4.39184383,8.76545455 6.80638929,8.77363636 C6.81729838,8.77363636 6.82729838,8.77363636 6.83729838,8.77363636 Z'></path></g>
+                </svg>
+                <h4>About</h4>
+            </div>
+
+            <div class="tab-item">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(3.610000, 2.750100)'><line x1='11.9858' y1='12.9463' x2='4.7658' y2='12.9463'></line><line x1='11.9858' y1='9.1865' x2='4.7658' y2='9.1865'></line><line x1='7.521' y1='5.4272' x2='4.766' y2='5.4272'></line><path d='M7.63833441e-14,9.25 C7.63833441e-14,16.187 2.098,18.5 8.391,18.5 C14.685,18.5 16.782,16.187 16.782,9.25 C16.782,2.313 14.685,0 8.391,0 C2.098,0 7.63833441e-14,2.313 7.63833441e-14,9.25 Z'></path></g>
+                </svg>
+                <h4>Resume</h4>
+            </div>
+
+            <div class="tab-item">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.750200, 2.450300)'><line x1='9.2109' y1='14.0665' x2='9.2109' y2='11.4385'></line><path d='M18.3393,9.0274 L18.3103,9.0484 C15.8883,10.5404 12.6903,11.4414 9.2063,11.4414 C5.7223,11.4414 2.5333,10.5404 0.1123,9.0484 L0.0823,9.0274'></path><path d='M-2.14939178e-13,10.9004 C-2.14939178e-13,4.7484 2.303,2.6974 9.211,2.6974 C16.12,2.6974 18.422,4.7484 18.422,10.9004 C18.422,17.0524 16.12,19.1034 9.211,19.1034 C2.303,19.1034 -2.14939178e-13,17.0524 -2.14939178e-13,10.9004 Z'></path><path d='M12.4736,2.919 L12.4736,2.289 C12.4736,1.025 11.5506,-8.8817842e-15 10.4136,-8.8817842e-15 L8.0086,-8.8817842e-15 C6.8716,-8.8817842e-15 5.9486,1.025 5.9486,2.289 L5.9486,2.919'></path></g>
+                </svg>
+                <h4>Work</h4>
+            </div>
+
+            <div class="tab-item">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.000000, 2.000000)'><path d='M10.0002,0.7501 C3.0632,0.7501 0.7502,3.0631 0.7502,10.0001 C0.7502,16.9371 3.0632,19.2501 10.0002,19.2501 C16.9372,19.2501 19.2502,16.9371 19.2502,10.0001'></path><path d='M17.5285,2.3038 L17.5285,2.3038 C16.5355,1.4248 15.0185,1.5168 14.1395,2.5098 C14.1395,2.5098 9.7705,7.4448 8.2555,9.1578 C6.7385,10.8698 7.8505,13.2348 7.8505,13.2348 C7.8505,13.2348 10.3545,14.0278 11.8485,12.3398 C13.3435,10.6518 17.7345,5.6928 17.7345,5.6928 C18.6135,4.6998 18.5205,3.1828 17.5285,2.3038 Z'></path><line x1='13.009' y1='3.8008' x2='16.604' y2='6.9838'></line></g>
+                </svg>
+                <h4>Blog</h4>
+            </div>
+
+            <div class="tab-item">
+                <svg class='line' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(2.452080, 2.851980)'><path d='M15.0928322,6.167017 C15.0928322,6.167017 11.8828071,10.0196486 9.53493746,10.0196486 C7.18807029,10.0196486 3.941955,6.167017 3.941955,6.167017'></path><path d='M1.04805054e-13,9.11679198 C1.04805054e-13,2.27869674 2.38095238,8.8817842e-15 9.52380952,8.8817842e-15 C16.6666667,8.8817842e-15 19.047619,2.27869674 19.047619,9.11679198 C19.047619,15.9538847 16.6666667,18.233584 9.52380952,18.233584 C2.38095238,18.233584 1.04805054e-13,15.9538847 1.04805054e-13,9.11679198 Z'></path></g>
+                </svg>
+                <h4>Contact</h4>
+            </div>
+        </div>
+
+
+        <div class="tab-pane active">
+            <section></section>
+            <h3>About me</h3>
+            <br />
+            <div class="content-about">
+            <div style="margin: 0 20 0 50px;">I'm a student at the Institute of Cryptography, Faculty of Information Technology and majoring in mobile software development.</div>
+            <div style="margin: 0 20 0 50px;;margin-top:10px;">I have a passion for computers, technology, topics related to coding or programming. And my dream is to become a fullstack developer</div>
+            <div style="margin: 0 20 0 50px;;margin-top:10px;">I have a few hobbies such as listening to music while working, playing games, playing football, singing and interested in large displacement vehicles.</div>
+            </div>
+
+            <h4>Skill</h4>
+            <div class="skill-about">
+                <div style="width:70%;height:30px;border-radius:30px;border:1px solid rgb(0, 0, 0, 0.6)" title="web">
+                    <div style="background-color:antiquewhite;width:50%;height:100%;margin:0;padding:0;border-radius:30px;font-size:15px;text-align:center;"><div class="padding-skill">Web Design</div></div>
+                </div>
+
+                <div style="width:70%;height:30px;border-radius:30px;border:1px solid rgb(0, 0, 0, 0.6);margin-top:20px;" title="Photoshop">
+                    <div style="background-color:antiquewhite;width:63%;height:100%;margin:0;padding:0;border-radius:30px;font-size:15px;text-align:center;"><div class="padding-skill">Photoshop</div></div>
+                </div>
+
+                <div style="width:70%;height:30px;border-radius:30px;border:1px solid rgb(0, 0, 0, 0.6);margin-top:20px;" title="Illustrator">
+                    <div style="background-color:antiquewhite;width:40%;height:100%;margin:0;padding:0;border-radius:30px;font-size:15px;text-align:center;"><div class="padding-skill">Illustrator</div></div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="tab-pane">
+            <section></section>
+            <h3>Resume</h3>
+
+            <div class="edu-resume-icon">
+                <!-- <svg width="30px" height="30px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                    <title>Education</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="colored" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                        <g id="Marketing_sliced" sketch:type="MSLayerGroup" transform="translate(-720.000000, -120.000000)"></g>
+                        <g id="Marketing" sketch:type="MSLayerGroup" transform="translate(-712.000000, -120.000000)" stroke="#314E55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g id="Desk" transform="translate(716.000000, 115.000000)" sketch:type="MSShapeGroup">
+                                <path d="M43,32 L43,45 C43,45 36.4469738,49 26,49 C15.5530262,49 9,45 9,45 L9,32" id="Rectangle-1624" fill="#D8D8D8"></path>
+                                <path d="M8.15678015,10.4405946 C7.81773976,9.38915597 8.39730843,8.81230601 9.44669123,9.15068349 L33.1790439,16.8032711 C34.2304825,17.1423115 35.3583514,18.2715733 35.6967289,19.3209561 L43.3493165,43.0533088 C43.6883569,44.1047474 43.1087882,44.6815973 42.0594054,44.3432199 L18.3270527,36.6906322 C17.2756141,36.3515918 16.1477453,35.2223301 15.8093678,34.1729473 L8.15678015,10.4405946 Z" id="Rectangle-1623" fill="#D8D8D8" transform="translate(25.753048, 26.746952) rotate(-45.000000) translate(-25.753048, -26.746952) "></path>
+                                <path d="M39,34 L39,52" id="Line"></path>
+                                <circle id="Oval-1441" fill="#D26CBA" cx="39" cy="55" r="3"></circle>
+                                <path d="M10,27 L14,25" id="Line"></path>
+                                <path d="M14,29 L18,27" id="Line"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg> -->
+
+                <h4 style="margin-left:-50px">Education</h4>
+            </div>
+
+            <div class="edu-resume-content">
+                <article class="timeline-item">
+                    <h5 style="font-size:20px;">Quang Xuong High School 1</h5>
+                    <span>2018 - 2022</span>
+                    <p>Successful completion of high school</p>
+                </article>
+
+                <article class="timeline-item">
+                    <h5 style="font-size:20px;">Academy of Cryptography Engineering</h5>
+                    <span>2022 - 2027</span>
+                    <p>Currently completing an undergraduate program in engineering knowledge</p>
+                </article>
+            </div>
+
+        </div>
+
+        <div class="tab-pane">
+            <section></section>
+            <div style="text-align:center">Loading...</div>
+
+        </div>
+
+        <div class="tab-pane">
+            <section></section>
+            <div style="text-align:center">Loading...</div>
+
+        </div>
+
+        <div class="tab-pane">
+            <section></section>
+            <div style="text-align:center">Loading...</div>
+
+        </div>
+    </div>
+
+    <!--[ End Code Box Content ]-->
+
+    <script src="main.js">
+    </script>
+    </body>
+</html>
